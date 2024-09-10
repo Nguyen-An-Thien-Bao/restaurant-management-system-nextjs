@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import './globals.css';
-import DMThemeProvider from '@/provider/DarkModeProvider';
+import '../globals.css';
+import Header from '@/components/Header';
 
 const inter = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700'] });
 
@@ -17,10 +17,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body
-                className={`${inter.className} min-h-screen text-black dark:text-white bg-secondary-white dark:bg-secondary-dark`}
-            >
-                <DMThemeProvider>{children}</DMThemeProvider>
+            <body className={`${inter.className} min-h-screen bg-secondary-white dark:bg-secondary-dark`}>
+                <Header />
+                <div className="px-12">{children}</div>
             </body>
         </html>
     );

@@ -1,0 +1,13 @@
+import React from 'react';
+import User from './User';
+import NavButton from './NavButton';
+
+function DashboardHeader(): React.ReactElement {
+    return (
+        <header className="sticky shadow-[0px_7px_4px_-1px_rgba(0,0,0,0.54)] text-white flex justify-between md:justify-end items-center p-4 px-[27px] h-[80px] top-0 left-0 rounded-md right-0 bg-primary-green bg-primary-dark">
+            <NavButton />
+            <User />
+        </header>
+    );
+}
+export default DashboardHeader;
