@@ -65,13 +65,14 @@ function Form({ type }: { type: string }): React.ReactNode {
                             type="password"
                             className="w-full bg-transparent px-2 py-1 rounded-md  outline-none border border-black focus:outline focus:outline-primary-red mb-4 outline-offset-0"
                             name="userPassword"
+                            placeholder="eg...123456789"
                             id="userPassword"
                             value={form.password}
                             onChange={(e) => handleSetPassword(e)}
                         />
                         <p>{}</p>
-                        <button className="w-full capitalize text-black bg-white border-white rounded-md py-2 text-sm font-semibold hover-effect">
-                            login
+                        <button className="w-full bg-white capitalize  text-black border border-black  rounded-md py-2 text-sm font-semibold hover:bg-primary-red hover:transition-all hover:text-white hover:border-primary-red">
+                            {type}
                         </button>
                     </div>
                 </div>
@@ -100,6 +101,7 @@ function Form({ type }: { type: string }): React.ReactNode {
                             className="w-full bg-transparent px-2 py-1 rounded-md  outline-none border border-black focus:outline focus:outline-primary-red mb-4 outline-offset-0"
                             name="userPassword"
                             id="userPassword"
+                            placeholder="eg...123456789"
                             value={form.password}
                             onChange={(e) => handleSetPassword(e)}
                         />
@@ -112,10 +114,11 @@ function Form({ type }: { type: string }): React.ReactNode {
                             name="userPhone"
                             id="userPhone"
                             value={form.phone}
+                            placeholder="eg...123456789"
                             onChange={(e) => handleSetPhoneNumber(e)}
                         />
-                        <button className="w-full capitalize text-black bg-white border-white rounded-md py-2 text-sm font-semibold hover-effect">
-                            login
+                        <button className="w-full bg-white capitalize  text-black border border-black  rounded-md py-2 text-sm font-semibold hover:bg-primary-red hover:transition-all hover:text-white hover:border-primary-red">
+                            {type}
                         </button>
                     </div>
                 </div>

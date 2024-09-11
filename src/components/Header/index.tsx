@@ -9,7 +9,7 @@ function Header() {
     const pathname = usePathname();
 
     return (
-        <div className="sticky top-0 right-0 left-0 md:px-12 border-b-[1px] border-black flex justify-between items-center">
+        <div className="sticky z-50 bg-secondary-white dark:bg-secondary-dark top-0 right-0 left-0 md:px-12 border-b-[1px] border-black flex justify-between items-center">
             <div className="flex items-center">
                 <div className="mr-4 min-w-6">
                     <RiInbox2Fill />
@@ -21,7 +21,7 @@ function Header() {
                             key={idx}
                             className={`${
                                 pathname === ele.path ? 'bg-primary-red' : 'bg-transparent'
-                            } capitalize py-4 px-6 font-semibold`}
+                            } capitalize py-4 px-6 font-semibold hover:bg-primary-red hover:transition-colors`}
                         >
                             {ele.title}
                         </Link>

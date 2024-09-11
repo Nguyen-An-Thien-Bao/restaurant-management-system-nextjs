@@ -1,7 +1,5 @@
 'use client';
 
-import React, { createContext, useEffect, useState } from 'react';
+import { createContext } from 'react';
 
 export const SidebarContext = createContext();
-
-

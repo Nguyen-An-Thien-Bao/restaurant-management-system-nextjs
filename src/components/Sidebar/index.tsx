@@ -17,13 +17,14 @@ function Sidebar(): React.ReactElement {
         }
         return;
     };
+    //shadow-[11px_0px_4px_-1px_rgba(0,0,0,0.54)]
 
     return (
         <>
             <aside
                 className={`${
                     isOpen ? 'w-[170px] translate-x-0' : 'w-0 -translate-x-full'
-                } z-20 ease-in-out duration-300 fixed top-0 left-0 bottom-0 min-w-40 min-h-full bg-primary-green shadow-[11px_0px_4px_-1px_rgba(0,0,0,0.54)] text-white bg-primary-dark`}
+                } z-20 shadow-[11px_0px_4px_-1px_rgba(0,0,0,0.54)] ease-in-out duration-300 fixed top-0 left-0 bottom-0 min-w-40 min-h-full bg-primary-green  text-white bg-primary-dark`}
             >
                 <div className="px-12 py-4">
                     <div>
@@ -39,7 +40,7 @@ function Sidebar(): React.ReactElement {
                             onClick={handleCloseSidebar}
                             className={`${
                                 pathname === ele.path ? 'bg-primary-red' : 'dark:bg-primary-black'
-                            } w-full select-none capitalize font-medium flex items-center py-2 px-4 my-4 transition-colors duration-75 hover-effect`}
+                            } w-full select-none capitalize font-medium flex items-center py-4 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all`}
                         >
                             <Icon className="mr-4" />
                             <span>{ele.title}</span>

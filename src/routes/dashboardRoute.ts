@@ -12,8 +12,8 @@ const dashboardRoutes = [
         Icon: FaChartBar,
     },
     {
-        title: 'products',
-        path: '/products',
+        title: 'menu',
+        path: '/menu',
         Icon: FaHamburger,
     },
     {
