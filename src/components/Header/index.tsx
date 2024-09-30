@@ -1,35 +1,15 @@
-'use client';
-import Link from 'next/link';
-import DarkMode from '../Sidebar/DarkMode';
-import { RiInbox2Fill } from 'react-icons/ri';
-import { navRoutes } from '@/routes';
-import { usePathname } from 'next/navigation';
+import { FaConciergeBell } from 'react-icons/fa';
 
 function Header() {
-    const pathname = usePathname();
-
     return (
-        <div className="sticky z-50 bg-secondary-white dark:bg-secondary-dark top-0 right-0 left-0 md:px-12 border-b-[1px] border-black flex justify-between items-center">
+        <div className="sticky mobile-Nav-Header-Height z-50 bg-secondary-cyan top-0 right-0 left-0 md:px-12 flex justify-between items-center">
             <div className="flex items-center">
-                <div className="mr-4 min-w-6">
-                    <RiInbox2Fill />
+                <div className="text-2xl text-white flex justify-center items-center px-2">
+                    <FaConciergeBell className="mr-1" />
+                    <h2 className="font-bold ">RMS</h2>
                 </div>
-                <div className="flex">
-                    {navRoutes.map((ele, idx) => (
-                        <Link
-                            href={ele.path}
-                            key={idx}
-                            className={`${
-                                pathname === ele.path ? 'bg-primary-red' : 'bg-transparent'
-                            } capitalize py-4 px-6 font-semibold hover:bg-primary-red hover:transition-colors`}
-                        >
-                            {ele.title}
-                        </Link>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <DarkMode />
+
+                <div className="mr-4 min-w-6"></div>
             </div>
         </div>
     );

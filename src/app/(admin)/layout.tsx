@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
 import '../globals.css';
 import Sidebar from '@/components/Sidebar';
 import SidebarProvider from '@/provider/SidebarProvider';
 import LayoutContainer from '@/components/LayoutContainer';
 import DashboardHeader from '@/components/DashboardHeader';
-
-const inter = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700'] });
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -19,16 +16,14 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body className={`${inter.className} min-h-screen bg-secondary-white dark:bg-secondary-dark`}>
-                <SidebarProvider>
-                    <Sidebar />
-                    <LayoutContainer>
-                        <DashboardHeader />
-                        {children}
-                    </LayoutContainer>
-                </SidebarProvider>
-            </body>
-        </html>
+        <section>
+            <SidebarProvider>
+                <Sidebar />
+                <LayoutContainer>
+                    <DashboardHeader />
+                    {children}
+                </LayoutContainer>
+            </SidebarProvider>
+        </section>
     );
 }
