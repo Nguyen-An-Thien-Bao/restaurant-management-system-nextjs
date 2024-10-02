@@ -4,9 +4,11 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
+        "database": "json-server --watch db.json --port 8080",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "ngrok": "ngrok http 8080"
     },
     "dependencies": {
         "@emotion/react": "^11.13.3",
@@ -17,6 +19,7 @@
         "@radix-ui/react-slot": "^1.1.0",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
+        "json-server": "^1.0.0-beta.3",
         "lucide-react": "^0.446.0",
         "next": "14.2.8",
         "next-themes": "^0.3.0",

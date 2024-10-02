@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { validateEmail } from '@/utils/regex';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { navigate } from '@/utils/navigate';
 
 const FormInit = {
     email: '',
@@ -43,6 +44,7 @@ function Form(): React.ReactNode {
             return;
         }
         setError(errorForm);
+        navigate('/waiter');
     };
 
     return (
@@ -90,7 +92,7 @@ function Form(): React.ReactNode {
 
                     <p className="h-4 leading-4 mb-4 font-semibold text-red-500">{error.email}</p>
                     <button
-                        onClick={handleLogin}
+                        onClick={() => handleLogin()}
                         className="w-full bg-white capitalize outline-none text-black border border-black  rounded-md py-2 text-sm font-semibold hover:bg-primary-cyan hover:transition-all hover:text-white hover:border-primary-cyan"
                     >
                         login

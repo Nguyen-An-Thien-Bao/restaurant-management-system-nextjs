@@ -25,6 +25,7 @@ function TableItem({
     tableData,
 }: {
     tableData: {
+        id: string;
         tableNumber: number;
         tableStatus: number;
         tableCapacity: number;
@@ -51,8 +52,8 @@ function TableItem({
         <>
             <Dialog>
                 <DialogTrigger asChild>
-                    <div className="capitalize text-[14px] border-[1.5px] rounded-lg border-black bg-white p-2 cursor-pointer transition-all hover:opacity-55 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-                        <h2 className="font-bold text-xl">table 1</h2>
+                    <div className="capitalize select-none text-[14px] border-[1.5px] rounded-lg border-black bg-white p-2 cursor-pointer transition-all hover:opacity-55 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                        <h2 className="font-bold text-xl">table {tableData.tableNumber}</h2>
                         <p className="">
                             status: <span className={`${color} w-full`}>{text}</span>
                         </p>
@@ -60,7 +61,7 @@ function TableItem({
                     </div>
                     {/* <Button variant="outline">Share</Button> */}
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-md md:max-w-[650px]">
+                <DialogContent className="w-[calc(100%-50px)] max-h-[calc(100%-50px)] rounded-lg md:max-w-[650px] flex flex-col">
                     <DialogHeader>
                         <DialogTitle>Notice</DialogTitle>
                         {tableData.tableStatus === 0 && (
@@ -71,54 +72,56 @@ function TableItem({
                         )}
                         {tableData.tableStatus === 2 && <DialogDescription>This table is in serve.</DialogDescription>}
                     </DialogHeader>
-                    <div className="">
-                        {tableData.tableStatus === 2 && (
-                            <div className="h-3/4 md:h-4/5 overflow-y-scroll pr-4">
+                    {tableData.tableStatus === 2 && (
+                        <div className="h-full overflow-y-scroll relative">
+                            <div className="pr-4">
                                 <OrderItem />
                                 <OrderItem />
                                 <OrderItem desc />
                                 <OrderItem />
+                                <OrderItem />
+                                <OrderItem />
                             </div>
-                        )}
-                    </div>
+                        </div>
+                    )}
+
                     {tableData.tableStatus === 0 && (
-                        <DialogFooter>
+                        <DialogFooter className="h-12">
                             <div className="flex w-full justify-center items-center gap-4">
                                 <DialogClose asChild>
-                                    <Button type="button" variant="secondary">
+                                    <Link
+                                        href={`/waiter/tables/${tableData.id}`}
+                                        className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white"
+                                    >
                                         Create Order
-                                    </Button>
+                                    </Link>
                                 </DialogClose>
                                 <DialogClose asChild>
-                                    <Button type="button" variant="secondary">
+                                    <button
+                                        type="button"
+                                        className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white"
+                                    >
                                         Close
-                                    </Button>
+                                    </button>
                                 </DialogClose>
                             </div>
                         </DialogFooter>
                     )}
                     {tableData.tableStatus === 2 && (
-                        <DialogFooter>
+                        <DialogFooter className="h-12">
                             <div className="flex w-full justify-center items-center gap-4">
                                 <DialogClose asChild>
-                                    <Button
-                                        className="bg-secondary-cyan hover:bg-primary-cyan outline-none text-white"
-                                        type="button"
-                                        variant="secondary"
+                                    <Link
+                                        className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white"
+                                        href={`/waiter/checkout/${tableData.id}`}
                                     >
-                                        <Link className="w-full" href={'/waiter/checkout'}>
-                                            Checkout
-                                        </Link>
-                                    </Button>
+                                        Checkout
+                                    </Link>
                                 </DialogClose>
                                 <DialogClose asChild>
-                                    <Button
-                                        className="hover:bg-primary-cyan outline-none hover:text-white"
-                                        type="button"
-                                        variant="secondary"
-                                    >
+                                    <button className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white">
                                         Close
-                                    </Button>
+                                    </button>
                                 </DialogClose>
                             </div>
                         </DialogFooter>

@@ -16,6 +16,7 @@ function MobileNav({ type }: { type: string }) {
                 return ele.path ? (
                     <Link
                         className={`${ele.path === pathname ? 'bg-primary-cyan' : ''} p-2 rounded-xl`}
+                        // className={`${pathname.startsWith(ele.path) ? 'bg-primary-cyan' : ''} p-2 rounded-xl`}
                         key={idx}
                         href={ele.path}
                     >
