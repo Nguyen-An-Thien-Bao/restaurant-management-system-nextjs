@@ -1,7 +1,10 @@
 import { Roboto } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@mui/material/styles';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import theme from '../../muiTheme';
 
-const inter = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700'] });
+const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700'] });
 
 export default function RootLayout({
     children,
@@ -10,7 +13,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${inter.className} min-h-screen bg-theme-primary`}>{children}</body>
+            <body className={`${roboto.className} min-h-screen bg-theme-primary`}>
+                <AppRouterCacheProvider>
+                    <ThemeProvider theme={theme}>{children} </ThemeProvider>
+                </AppRouterCacheProvider>
+            </body>
         </html>
     );
 }

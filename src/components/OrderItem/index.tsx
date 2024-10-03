@@ -7,7 +7,13 @@ function OrderItem({ desc }: { desc?: boolean }) {
         <div className="py-3 border-b-[1px] border-black">
             <div className="flex items-center w-full">
                 <div className="w-16 aspect-square relative">
-                    <Image sizes="" src={sampleImage} alt="" fill className="rounded-xl" />
+                    <Image
+                        src={sampleImage}
+                        alt=""
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        fill
+                        className="rounded-xl"
+                    />
                 </div>
 
                 <div className="ml-4 py-2 w-full">

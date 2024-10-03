@@ -21,6 +21,7 @@ const config: Config = {
                 },
                 'secondary-cyan': '#3B98B5',
                 'primary-gray': '#B3B3B3',
+                'secondary-gray': '#2C2C2C',
                 'primary-cyan': '#2DBFBF',
                 'theme-primary': '#D9D9D9',
                 card: {

@@ -1,26 +1,33 @@
-import { HiHome } from 'react-icons/hi';
-import { FaMoneyBillWave, FaConciergeBell, FaUser } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+import { WaiterHomeIcon, WaiterBellIcon, WaiterMoneyIcon, WaiterUserIcon } from '@/asset/icon/waiterRouteIcons';
 
-const waiterRoutes = [
+type IRoute = {
+    title: string;
+    Icon: IconType;
+    path: string;
+};
+
+const waiterRoutes: IRoute[] = [
     {
         title: 'Home',
-        icon: HiHome,
-        path: '/waiter',
+        Icon: WaiterHomeIcon,
+        path: '/waiter/home',
     },
     {
         title: 'tables',
-        icon: FaConciergeBell,
+        Icon: WaiterBellIcon,
 
         path: '/waiter/tables',
     },
     {
         title: 'checkout',
-        icon: FaMoneyBillWave,
+        Icon: WaiterMoneyIcon,
         path: '/waiter/checkout',
     },
     {
         title: 'user',
-        icon: FaUser,
+        path: '',
+        Icon: WaiterUserIcon,
     },
 ];
 

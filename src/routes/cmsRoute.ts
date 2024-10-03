@@ -1,31 +1,31 @@
-import { FaHome, FaChartBar, FaHistory, FaHamburger, FaUsers } from 'react-icons/fa';
+import { CmsHomeIcon, CmsChartIcon, CmsUserIcon, CmsHamburgerIcon, CmsHistoryIcon } from '@/asset/icon/cmsRouteIcon';
 
-const dashboardRoutes = [
+const cmsRoutes = [
     {
         title: 'dashboard',
         path: '/dashboard',
-        Icon: FaHome,
+        Icon: CmsHomeIcon,
     },
     {
         title: 'analyst',
         path: '/analyst',
-        Icon: FaChartBar,
+        Icon: CmsChartIcon,
     },
     {
         title: 'menu',
         path: '/menu',
-        Icon: FaHamburger,
+        Icon: CmsHamburgerIcon,
     },
     {
         title: 'histoty',
         path: '/history',
-        Icon: FaHistory,
+        Icon: CmsHistoryIcon,
     },
     {
         title: 'staffs',
         path: '/staffs',
-        Icon: FaUsers,
+        Icon: CmsUserIcon,
     },
 ];
 
-export default dashboardRoutes;
+export default cmsRoutes;

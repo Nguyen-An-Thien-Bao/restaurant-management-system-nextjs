@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 function WaiterHome(): React.ReactNode {
     return (
         <div>
-            <Header />
+            <div className="lg:hidden">
+                <Header />
+            </div>
             Waiter Home
         </div>
     );

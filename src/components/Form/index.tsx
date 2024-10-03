@@ -44,7 +44,7 @@ function Form(): React.ReactNode {
             return;
         }
         setError(errorForm);
-        navigate('/waiter');
+        navigate('/waiter/home');
     };
 
     return (

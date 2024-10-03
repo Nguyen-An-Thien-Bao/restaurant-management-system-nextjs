@@ -1,20 +1,20 @@
-import { HiHome } from 'react-icons/hi';
-import { FaConciergeBell, FaUser } from 'react-icons/fa';
+import { ChefBellIcon, ChefHomeIcon, ChefUserIcon } from '@/asset/icon/chefRouteIcon';
 
 const chefRoutes = [
     {
         title: 'Home',
-        icon: HiHome,
-        path: '/chef',
+        Icon: ChefHomeIcon,
+        path: '/chef/home',
     },
     {
         title: 'tables',
-        icon: FaConciergeBell,
+        Icon: ChefBellIcon,
         path: '/chef/orders',
     },
     {
         title: 'user',
-        icon: FaUser,
+        path: '',
+        Icon: ChefUserIcon,
     },
 ];
 

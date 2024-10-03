@@ -1,12 +1,22 @@
 'use client';
 import React from 'react';
-import { dashboardRoutes } from '@/routes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useContext } from 'react';
 import { SidebarContext } from '@/context/SidebarContext';
+import { IconType } from 'react-icons';
 
-function Sidebar(): React.ReactElement {
+interface SidebarItem {
+    title: string;
+    Icon: IconType;
+    path: string;
+}
+
+interface SidebarProps {
+    routes: SidebarItem[];
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ routes }) => {
     const pathname = usePathname();
     const { isOpen, handleOpenSidebar, windowSize } = useContext(SidebarContext);
 
@@ -21,8 +31,10 @@ function Sidebar(): React.ReactElement {
         <>
             <aside
                 className={`${
-                    isOpen ? 'w-[170px] translate-x-0' : 'w-0 -translate-x-full'
-                } z-20 shadow-[11px_0px_4px_-1px_rgba(0,0,0,0.54)] ease-in-out duration-300 fixed top-0 left-0 bottom-0 min-w-40 min-h-full bg-primary-green  text-white bg-secondary-cyan`}
+                    isOpen
+                        ? 'w-[170px] translate-x-0 shadow-[11px_0px_4px_-1px_rgba(0,0,0,0.54)]'
+                        : 'w-0 -translate-x-full'
+                } z-20  ease-in-out duration-300 fixed top-0 left-0 bottom-0 min-w-40 min-h-full bg-primary-green  text-white bg-secondary-cyan`}
             >
                 <div className="px-12 py-4 my-4 w-full">
                     <div className="w-full">
@@ -34,20 +46,28 @@ function Sidebar(): React.ReactElement {
                         </svg>
                     </div>
                 </div>
-                {dashboardRoutes.map((ele, idx) => {
-                    const Icon = ele.Icon;
-                    return (
+                {routes.map((ele, idx) => {
+                    const { Icon, path } = ele;
+                    return path !== '' ? (
                         <Link
                             key={idx}
                             href={ele.path}
                             onClick={handleCloseSidebar}
                             className={`${
-                                pathname === ele.path ? 'bg-primary-cyan' : 'bg-primary-black'
+                                pathname.startsWith(ele.path) ? 'bg-primary-cyan' : 'bg-primary-black'
                             } w-full select-none capitalize font-medium flex items-center py-4 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all`}
                         >
                             <Icon className="mr-4" />
                             <span>{ele.title}</span>
                         </Link>
+                    ) : (
+                        <button
+                            key={idx}
+                            className="w-full select-none capitalize font-medium flex items-center py-4 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all"
+                        >
+                            <Icon className="mr-4" />
+                            {ele.title}
+                        </button>
                     );
                 })}
             </aside>
@@ -61,6 +81,6 @@ function Sidebar(): React.ReactElement {
             )}
         </>
     );
-}
+};
 
 export default Sidebar;

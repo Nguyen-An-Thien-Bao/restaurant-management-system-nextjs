@@ -29,7 +29,7 @@ async function WaiterTable() {
             <Header />
             <div className="px-4 mt-4">
                 <FilterBtn />
-                <div className="mt-4 grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="mt-4 grid gap-4 pb-[80px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {tableList.map(
                         (
                             ele: {

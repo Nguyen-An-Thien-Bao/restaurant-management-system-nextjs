@@ -12,7 +12,7 @@ function SidebarProvider({ children }: { children: React.ReactNode }) {
     };
 
     useEffect(() => {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1024) {
             setIsOpen(true);
         }
         setWindowSize(window.innerWidth);

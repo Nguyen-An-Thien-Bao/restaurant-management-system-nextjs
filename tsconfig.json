@@ -27,7 +27,8 @@
         "**/*.tsx",
         ".next/types/**/*.ts",
         "src/app/layout.tsx",
-        "src/components/Carousel/index.js"
+        "src/components/Carousel/index.js",
+        "src/routes/waiterRoutes.ts"
     ],
     "exclude": ["node_modules"]
 }

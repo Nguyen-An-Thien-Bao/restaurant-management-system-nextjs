@@ -59,9 +59,8 @@ function TableItem({
                         </p>
                         <p>capacity: {tableData.tableCapacity}</p>
                     </div>
-                    {/* <Button variant="outline">Share</Button> */}
                 </DialogTrigger>
-                <DialogContent className="w-[calc(100%-50px)] max-h-[calc(100%-50px)] rounded-lg md:max-w-[650px] flex flex-col">
+                <DialogContent className="w-[calc(100%-50px)] max-h-[calc(100%-50px)] rounded-lg md:max-w-[560px] flex flex-col">
                     <DialogHeader>
                         <DialogTitle>Notice</DialogTitle>
                         {tableData.tableStatus === 0 && (
