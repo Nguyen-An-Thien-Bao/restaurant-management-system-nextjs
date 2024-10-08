@@ -108,7 +108,7 @@ function TableItem({
                     )}
                     {tableData.tableStatus === 2 && (
                         <DialogFooter className="h-12">
-                            <div className="flex w-full justify-center items-center gap-4">
+                            <div className="flex w-full justify-center items-center gap-x-4">
                                 <DialogClose asChild>
                                     <Link
                                         className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white"

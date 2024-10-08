@@ -1,5 +1,7 @@
+'use client';
 import formatCurrency from '@/utils/currencyFormat';
 import { Button } from '@/components/ui/button';
+
 import {
     Dialog,
     DialogClose,
@@ -11,6 +13,7 @@ import {
     DialogTrigger,
 } from '@/components/ui/dialog';
 import MenuItem from '../Menu/MenuItem';
+import Link from 'next/link';
 
 type CheckoutItemType = {
     id: number;
@@ -58,10 +61,11 @@ function CheckoutItem({ data }: { data: CheckoutItemType }) {
             text = 'còn món';
             break;
     }
+
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <div className="flex items-center pb-3 border-b-[1.5px] border-black cursor-pointer">
+                <div className="flex select-none items-center pb-3 border-b-[1.5px] border-black cursor-pointer">
                     <div className="w-[60px] aspect-square rounded-lg bg-secondary-gray flex justify-center items-center">
                         <span className="text-center text-theme-primary font-semibold text-xl">{data.tableID}</span>
                     </div>
@@ -100,12 +104,20 @@ function CheckoutItem({ data }: { data: CheckoutItemType }) {
                     </div>
                 </div>
                 <DialogFooter className="h-12">
-                    <DialogClose>
-                        <Button type="submit">Checkout</Button>
-                    </DialogClose>
-                    <DialogClose>
-                        <Button type="submit">Close</Button>
-                    </DialogClose>
+                    <div className="flex justify-center gap-x-4 items-center">
+                        <Link
+                            className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white"
+                            href={`/waiter/checkout/${data.tableID}`}
+                            type="submit"
+                        >
+                            Checkout
+                        </Link>
+                        <DialogClose asChild>
+                            <button className="py-2 rounded-lg px-4 bg-secondary-cyan hover:bg-primary-cyan outline-none text-white">
+                                Close
+                            </button>
+                        </DialogClose>
+                    </div>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

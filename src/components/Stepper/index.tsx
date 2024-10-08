@@ -1,37 +1,47 @@
-'use client';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
+import BackwardBtn from '../BackwardBtn';
 
-function Stepper() {
-    const router = useRouter();
-
-    const handleBackward = () => {
-        router.back();
-    };
+function Stepper({
+    step = 1,
+    left = false,
+    right = false,
+    text = false,
+}: {
+    step?: number;
+    left?: boolean;
+    right?: boolean;
+    text?: boolean;
+}) {
     return (
-        <div className="flex py-2 gap-x-2 justify-between items-center">
-            <button onClick={() => handleBackward()} className="hover:text-primary-cyan text-2xl text-secondary-cyan">
-                <FaChevronLeft />
-            </button>
-
-            <ol className="flex gap-x-2 items-center w-full">
-                <div className="w-full text-gray-200">
+        <div className="flex select-none py-2 gap-x-2 items-center">
+            {left && <BackwardBtn text={text} />}
+            <ol className="flex gap-x-2 items-center w-full lg:w-3/5">
+                <div className={`w-full ${step === 1 ? 'text-secondary-cyan' : 'text-[#B7B7B7]'}`}>
                     <span className="font-bold text-sm">Tables</span>
-                    <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block dark:after:border-blue-800"></li>
+                    <li
+                        className={`${
+                            step === 1 ? 'after:border-secondary-cyan' : 'after:border-[#B7B7B7]'
+                        } flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b  after:border-4 after:inline-block dark:after:border-blue-800`}
+                    ></li>
                 </div>
-                <div className="w-full text-secondary-cyan">
+                <div className={`w-full ${step === 2 ? 'text-secondary-cyan' : 'text-[#B7B7B7]'}`}>
                     <span className="font-bold text-sm">Orders</span>
-                    <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-secondary-cyan after:border-4 after:inline-block dark:after:border-gray-700"></li>
+                    <li
+                        className={`${
+                            step === 2 ? 'after:border-secondary-cyan' : 'after:border-[#B7B7B7]'
+                        } flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b  after:border-4 after:inline-block dark:after:border-blue-800`}
+                    ></li>
                 </div>
-                <div className="w-full text-gray-200">
+                <div className={`w-full ${step === 3 ? 'text-secondary-cyan' : 'text-[#B7B7B7]'}`}>
                     <span className="font-bold text-sm">Confirm</span>
-                    <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block dark:after:border-gray-700"></li>
+                    <li
+                        className={`${
+                            step === 3 ? 'after:border-secondary-cyan' : 'after:border-[#B7B7B7]'
+                        } flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b  after:border-4 after:inline-block dark:after:border-blue-800`}
+                    ></li>
                 </div>
             </ol>
-
-            <button className="hover:text-primary-cyan text-2xl text-secondary-cyan">
-                <FaChevronRight />
-            </button>
+            {right && <BackwardBtn direction="right" text={text} />}
         </div>
     );
 }

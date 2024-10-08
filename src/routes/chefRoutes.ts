@@ -7,7 +7,7 @@ const chefRoutes = [
         path: '/chef/home',
     },
     {
-        title: 'tables',
+        title: 'orders',
         Icon: ChefBellIcon,
         path: '/chef/orders',
     },

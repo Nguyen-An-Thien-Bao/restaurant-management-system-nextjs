@@ -10,6 +10,7 @@ import Header from '@/components/Header';
 import TableItem from '@/components/TableItem';
 import { getTableList } from '@/services';
 import FilterBtn from '@/components/filterBtn';
+import Stepper from '@/components/Stepper';
 
 async function WaiterTable() {
     const tableList = await getTableList();
@@ -27,9 +28,12 @@ async function WaiterTable() {
     return (
         <>
             <Header />
+            <div className="px-6">
+                <Stepper />
+            </div>
             <div className="px-4 mt-4">
                 <FilterBtn />
-                <div className="mt-4 grid gap-4 pb-[80px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="mt-4 grid gap-4 pb-[80px] grid-cols-2 md:grid-cols-3">
                     {tableList.map(
                         (
                             ele: {

@@ -74,6 +74,7 @@ export default function CategoryBar() {
                     scrollButtons={true}
                     textColor="inherit"
                     allowScrollButtonsMobile
+                    sx={{ display: 'flex', justifyContent: 'space-between' }}
                     TabIndicatorProps={{
                         sx: {
                             color: 'primary.light',
@@ -87,7 +88,7 @@ export default function CategoryBar() {
                         <Tab
                             key={ele.index}
                             sx={{ fontFamily: 'roboto', fontWeight: 'bold', textTransform: 'capitalize' }}
-                            className="font-semibold"
+                            className="font-semibold lg:w-1/5"
                             label={ele.title}
                             {...a11yProps(ele.index)}
                         />

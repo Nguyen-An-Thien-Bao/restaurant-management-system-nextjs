@@ -39,7 +39,7 @@ function MenuItem({ dishData, staticItem }: { dishData: dishType; staticItem?: b
     };
 
     return (
-        <div className="flex border-b-[1.5px] border-black mb-2 cursor-pointer select-none pb-3">
+        <div className="flex border-b-[1.5px] border-black mb-2 select-none pb-3">
             <div className="w-[60px] aspect-square relative rounded-lg overflow-hidden">
                 <Image
                     src={sampleImage}

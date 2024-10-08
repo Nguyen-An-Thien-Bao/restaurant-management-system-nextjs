@@ -21,9 +21,7 @@ function OrderItem({ desc }: { desc?: boolean }) {
                     <p>{formatCurrency(120000)}</p>
                 </div>
                 <div className="">
-                    <span className="block w-6 text-center font-semibold aspect-square border-[1.5px] border-black">
-                        1
-                    </span>
+                    <span className="block w-6 text-center aspect-square border-[1.5px] border-black">1</span>
                 </div>
             </div>
             {desc && (
