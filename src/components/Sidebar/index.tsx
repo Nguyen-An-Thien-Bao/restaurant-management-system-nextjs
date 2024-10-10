@@ -55,17 +55,17 @@ const Sidebar: React.FC<SidebarProps> = ({ routes }) => {
                             onClick={handleCloseSidebar}
                             className={`${
                                 pathname.startsWith(ele.path) ? 'bg-primary-cyan' : 'bg-primary-black'
-                            } w-full select-none capitalize font-medium flex items-center py-4 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all`}
+                            } w-full select-none capitalize font-medium flex items-center py-5 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all`}
                         >
-                            <Icon className="mr-4" />
+                            <Icon className="mr-3 text-3xl" />
                             <span>{ele.title}</span>
                         </Link>
                     ) : (
                         <button
                             key={idx}
-                            className="w-full select-none capitalize font-medium flex items-center py-4 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all"
+                            className="w-full select-none capitalize font-medium flex items-center py-5 px-4 transition-colors duration-75 hover:bg-primary-red hover:opacity-60 hover:transition-all"
                         >
-                            <Icon className="mr-4" />
+                            <Icon className="mr-3" />
                             {ele.title}
                         </button>
                     );
@@ -76,7 +76,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes }) => {
             {isOpen && (
                 <div
                     onClick={handleOpenSidebar}
-                    className="fixed md:hidden top-0 left-0 right-0 bottom-0 z-10 bg-black opacity-50"
+                    className="fixed lg:hidden top-0 left-0 right-0 bottom-0 z-10 bg-black opacity-50"
                 ></div>
             )}
         </>

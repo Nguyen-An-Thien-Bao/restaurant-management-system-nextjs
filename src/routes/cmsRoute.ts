@@ -1,29 +1,41 @@
-import { CmsHomeIcon, CmsChartIcon, CmsUserIcon, CmsHamburgerIcon, CmsHistoryIcon } from '@/asset/icon/cmsRouteIcon';
+import {
+    CmsHomeIcon,
+    CmsChartIcon,
+    CmsUserIcon,
+    CmsBurger,
+    CmsHistoryIcon,
+    CmsBellIcon,
+} from '@/asset/icon/cmsRouteIcon';
 
 const cmsRoutes = [
     {
         title: 'dashboard',
-        path: '/dashboard',
+        path: '/admin/dashboard',
         Icon: CmsHomeIcon,
     },
     {
         title: 'analyst',
-        path: '/analyst',
+        path: '/admin/analyst',
         Icon: CmsChartIcon,
     },
     {
+        title: 'reservation',
+        path: '/admin/reservation',
+        Icon: CmsBellIcon,
+    },
+    {
         title: 'menu',
-        path: '/menu',
-        Icon: CmsHamburgerIcon,
+        path: '/admin/menu',
+        Icon: CmsBurger,
     },
     {
         title: 'histoty',
-        path: '/history',
+        path: '/admin/history',
         Icon: CmsHistoryIcon,
     },
     {
         title: 'staffs',
-        path: '/staffs',
+        path: '/admin/staffs',
         Icon: CmsUserIcon,
     },
 ];

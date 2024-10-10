@@ -8,11 +8,11 @@ async function Menus({ params }: { params: { id: string } }) {
     const menuData = await getMenu();
 
     return (
-        <div>
+        <div className="pb-[60px]">
             <Stepper step={2} left text />
             {/* <h2>Menu {params.id}</h2> */}
             <CategoryBar />
-            <div className="grid px-2 pb-[60px] mt-[30px] grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8">
+            <div className="grid px-2 mt-[30px] grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8">
                 {menuData.map(
                     (ele: {
                         id: string;
@@ -32,7 +32,7 @@ async function Menus({ params }: { params: { id: string } }) {
                     ),
                 )}
             </div>
-            <div>
+            <div className="pb-[20px] px-2 mt-4">
                 <span className="font-bold">Total:</span>
                 <span className="ml-2">{formatCurrency(1200000)}</span>
                 <br />

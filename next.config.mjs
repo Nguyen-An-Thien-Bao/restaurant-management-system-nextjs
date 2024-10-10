@@ -8,7 +8,14 @@ const nextConfig = {
                 port: '',
                 pathname: '**',
             },
+            {
+                protocol: 'https',
+                hostname: 'media.self.com',
+                port: '',
+                pathname: 'photos/**',
+            },
         ],
     },
 };
+
 export default nextConfig;

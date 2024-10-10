@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Table from '@/components/Table';
 
 export const metadata: Metadata = {
     title: 'Menu',
@@ -6,7 +7,13 @@ export const metadata: Metadata = {
 };
 
 function MenuPage() {
-    return <div>Product</div>;
+    return (
+        <div>
+            <div className="mt-8">
+                <Table></Table>
+            </div>
+        </div>
+    );
 }
 
 export default MenuPage;
